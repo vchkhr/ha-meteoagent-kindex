@@ -1,3 +1,3 @@
 """Constants for the MeteoAgent K-index integration."""
 
-DOMAIN = "meteoagent_kindex"
+DOMAIN = "meteo_agent_k_index"

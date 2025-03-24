@@ -1,7 +1,8 @@
 {
-    "domain": "meteoagent_kindex",
+    "domain": "meteo_agent_k_index",
     "name": "MeteoAgent K-index",
     "documentation": "https://github.com/vchkhr/ha-meteoagent-kindex",
+    "issue_tracker": "https://github.com/vchkhr/ha-meteoagent-kindex/issues",
     "dependencies": [],
     "codeowners": ["@vchkhr"],
     "requirements": ["beautifulsoup4>=4.9.3"],

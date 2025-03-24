@@ -13,12 +13,7 @@ Home Assistant integration that provides K-index sensor from MeteoAgent. The K-i
 
 ### Using HACS (Recommended)
 
-1. Open HACS
-2. Click on "Integrations"
-3. Click the "+ Explore & Download Repositories" button
-4. Search for "MeteoAgent K-index"
-5. Click "Download"
-6. Restart Home Assistant
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=vchkhr&category=Integration&repository=ha-meteoagent-kindex)
 
 ### Manual Installation
 
@@ -37,8 +32,8 @@ Home Assistant integration that provides K-index sensor from MeteoAgent. The K-i
 
 This integration provides two sensors:
 
-- `sensor.k_index_today`: K-index value for the current day
-- `sensor.k_index_tomorrow`: K-index value for tomorrow
+- `sensor.meteo_agent_k_index_today`: K-index value for the current day
+- `sensor.meteo_agent_k_index_tomorrow`: K-index value for tomorrow
 
 Each sensor shows:
 

@@ -70,8 +70,8 @@ class KIndexSensor(CoordinatorEntity, SensorEntity):
         """Initialize the sensor."""
         super().__init__(coordinator)
         self.sensor_type = sensor_type
-        self._attr_name = f"K-index {sensor_type}"
-        self._attr_unique_id = f"meteoagent_kindex_{sensor_type}"
+        self._attr_name = f"MeteoAgent K-index for {sensor_type.title()}"
+        self._attr_unique_id = f"meteo_agent_k_index_{sensor_type}"
         self._attr_native_unit_of_measurement = "K"
         self._attr_state_class = SensorStateClass.MEASUREMENT
 
