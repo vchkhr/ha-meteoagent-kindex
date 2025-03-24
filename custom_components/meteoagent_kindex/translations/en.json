@@ -1,0 +1,13 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "description": "Do you want to set up MeteoAgent K-index?",
+                "title": "MeteoAgent K-index"
+            }
+        },
+        "abort": {
+            "single_instance_allowed": "Already configured. Only a single configuration possible."
+        }
+    }
+}

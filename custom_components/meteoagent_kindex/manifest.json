@@ -1,0 +1,11 @@
+{
+    "domain": "meteoagent_kindex",
+    "name": "MeteoAgent K-index",
+    "documentation": "https://github.com/vchkhr/ha-meteoagent-kindex",
+    "dependencies": [],
+    "codeowners": ["@vchkhr"],
+    "requirements": ["beautifulsoup4>=4.9.3"],
+    "iot_class": "cloud_polling",
+    "version": "1.0.0",
+    "config_flow": true
+}
