@@ -7,7 +7,7 @@ Home Assistant integration that provides K-index sensor from MeteoAgent. The K-i
 - Provides K-index value for today and tomorrow
 - Updates every 30 minutes
 - Shows values from 1 (low) to 9 (extreme) on the K-index scale
-- Data sourced from MeteoAgent (meteoagent.com)
+- Data sourced from [meteoagent.com](https://meteoagent.com/)
 
 ## Installation
 
@@ -32,8 +32,8 @@ Home Assistant integration that provides K-index sensor from MeteoAgent. The K-i
 
 This integration provides two sensors:
 
-- `sensor.meteo_agent_k_index_today`: K-index value for the current day
-- `sensor.meteo_agent_k_index_tomorrow`: K-index value for tomorrow
+- `sensor.meteoagent_kindex_today`: K-index value for the current day
+- `sensor.meteoagent_kindex_tomorrow`: K-index value for tomorrow
 
 Each sensor shows:
 

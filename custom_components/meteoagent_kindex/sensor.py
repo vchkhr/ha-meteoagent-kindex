@@ -71,11 +71,41 @@ class KIndexSensor(CoordinatorEntity, SensorEntity):
         super().__init__(coordinator)
         self.sensor_type = sensor_type
         self._attr_name = f"MeteoAgent K-index for {sensor_type.title()}"
-        self._attr_unique_id = f"meteo_agent_k_index_{sensor_type}"
+        self._attr_unique_id = f"meteoagent_kindex_{sensor_type}"
         self._attr_native_unit_of_measurement = "K"
         self._attr_state_class = SensorStateClass.MEASUREMENT
+
+    @property
+    def icon(self) -> str:
+        """Return the icon based on K-index value."""
+        value = self.coordinator.data[self.sensor_type]
+        if value >= 5:
+            return "mdi:head-alert-outline"
+        if value >= 4:
+            return "mdi:head-snowflake-outline"
+        return "mdi:head-heart-outline"
 
     @property
     def native_value(self) -> StateType:
         """Return the state of the sensor."""
         return self.coordinator.data[self.sensor_type]
+
+    @property
+    def extra_state_attributes(self):
+        """Return additional sensor attributes."""
+        value = self.coordinator.data[self.sensor_type]
+        severity = self._get_kindex_interpretation(value)
+
+        return {
+            "severity": severity
+        }
+
+    def _get_kindex_interpretation(self, value: int) -> str:
+        """Get K-index interpretation."""
+        if value >= 5:
+            return "High"
+        if value >= 4:
+            return "Medium"
+        if value >= 1:
+            return "Low"
+        return "None"

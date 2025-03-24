@@ -1,5 +1,5 @@
 {
-    "domain": "meteo_agent_k_index",
+    "domain": "meteoagent_kindex",
     "name": "MeteoAgent K-index",
     "documentation": "https://github.com/vchkhr/ha-meteoagent-kindex",
     "issue_tracker": "https://github.com/vchkhr/ha-meteoagent-kindex/issues",
