@@ -19,6 +19,8 @@ from homeassistant.helpers.update_coordinator import (
     DataUpdateCoordinator,
 )
 
+from .const import DOMAIN
+
 _LOGGER = logging.getLogger(__name__)
 SCAN_INTERVAL = timedelta(minutes=30)
 
@@ -28,8 +30,18 @@ async def async_setup_entry(
     async_add_entities: AddEntitiesCallback,
 ) -> None:
     """Set up the MeteoAgent K-index sensors."""
-    coordinator = MeteoAgentCoordinator(hass)
+    # Check if coordinator exists, otherwise create it
+    if DOMAIN not in hass.data:
+        hass.data[DOMAIN] = {}
+
+    if config_entry.entry_id not in hass.data[DOMAIN]:
+        coordinator = MeteoAgentCoordinator(hass)
+        hass.data[DOMAIN][config_entry.entry_id] = coordinator
+    else:
+        coordinator = hass.data[DOMAIN][config_entry.entry_id]
+
     await coordinator.async_config_entry_first_refresh()
+
     async_add_entities([
         KIndexSensor(coordinator, "today"),
         KIndexSensor(coordinator, "tomorrow")
